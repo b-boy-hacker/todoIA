@@ -100,19 +100,42 @@ public class Lab1 {
             }           
         }
     }
+    public static int producto(LinkedList<Integer> L1){
+        int c=1;
+        int i=0;
+        while(i<L1.size()){
+            c = c*L1.get(i);
+            i++;
+        }
+        return c;
+        
+    }
+    
+    public static void Factores2(LinkedList<Integer> L1,int n,int i){
+        int prod = producto(L1);
+        
+        if(prod > n || L1.size()>n) return ;
+        if(prod == n){
+            System.out.println(L1);
+            return;
+        }   
+        int k = i;
+        while(k<=n){
+            L1.add(k);
+            Factores2(L1,n,k);
+            L1.removeLast();
+            k++;      
+        }
+        
+    }
+    
     
     public static void main(String[] args){
         LinkedList<Integer> L1 = new LinkedList<>();
         int n = 4;
-        System.out.println("-----------sumandos------------");
-        sumandos(L1, n, 1);
-        System.out.println("-----------sumandosIguales------------");
-        sumandosIguales(L1, n, 1);
-        System.out.println("-----------sumandosDiferentes------------");
-        sumandosDiferentes(L1, n, 1);
-        System.out.println("-----------encontrarFactores------------");
-        encontrarFactores(n);
+       
         System.out.println("-----------factores------------");
-        factores(L1, n, 1);
+        Factores2(L1, n, 1);
+        encontrarFactores(n);
     }
 }

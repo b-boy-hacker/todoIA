@@ -260,9 +260,11 @@ public class Lab5 {
         int a = 1;
         int b = 5;
         
+        L1.add(1);
         L1.add(2);
-        L1.add(101);
-      
+        L1.add(3);
+        L1.add(4);
+        
 //        L2.add(1);
 //        L2.add(2);
         L2.add(3);
@@ -271,7 +273,9 @@ public class Lab5 {
         L2.add(6);
     
 //        generarElem(L1, 2, 1, 20);
-//        System.out.println("Lista generada: " + L1);       
+//        System.out.println("Lista generada: " + L1);
+        System.out.println("L1 "+L1);
+        System.out.println("L3 "+L2);
         mostrarSubListas(L1);    
         
 //        generarElem(L1, 5, a, b);  // L1: Sublistas a buscar
