@@ -38,8 +38,7 @@ public class prueba {
     }
     
     public static void factores(LinkedList<Integer> L1,int n,int i){
-        int prod = producto(L1);
-        
+        int prod = producto(L1);        
         if(prod > n || L1.size()>n) return ;
         if(prod == n){
             System.out.println(L1);
@@ -63,8 +62,7 @@ public class prueba {
             L2.add(L1.get(j));
             mochila(L1, L2, max, j+1);
             L2.removeLast();
-        }
-    
+        }    
     }
     
     public static void combiSR(LinkedList<Integer> L1,

@@ -68,10 +68,10 @@ public class Tarea6 {
 //3. encontrarSubMatr(M1, L1) : Procedimiento que encuentra todas
 //        las subMatrices de la matriz M1, en la Lista de Matrices L1.
      public void encontrarSubMatr(LinkedList<Tarea6> L1) {
-        subMatricesEncontradas.clear(); // Limpiar la lista antes de añadir nuevas submatrices
+        this.subMatricesEncontradas.clear(); // Limpiar la lista antes de añadir nuevas submatrices
         for (Tarea6 M2 : L1) {
             if (esSubMatriz(this, M2)) {
-                subMatricesEncontradas.add(M2);
+                this.subMatricesEncontradas.add(M2);
             }
         }
     }

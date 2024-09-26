@@ -61,10 +61,39 @@ public class Matriz {
                         }
                         subM.cantFil = subFil;
                         subM.cantCol = subCol;                        
-                        this.lista.add(subM);                      
+                        this.lista.add(subM);    
+//                        System.out.println(subM);
                     }
                 }
             }
+        }
+    }
+    
+    public Matriz subMatrix(int y1, int y2, int x1, int x2) {
+        Matriz M2 = new Matriz(y2-y1+1, x2-x1+1);
+        for (int i = 0; i < M2.cantFil; i++) {
+            for (int j = 0; j < M2.cantCol; j++) {
+                M2.elem[i][j] = elem[y1+i][x1+j];
+            }
+        }
+        return M2;
+    } 
+    
+    public void mostrarSubMat() {
+        for (int i1 = 0; i1 < cantFil; i1++){
+            for (int i2 = i1; i2 < cantFil; i2++){
+                for (int j1 = 0; j1 < cantCol; j1++){
+                    for (int j2 = j1; j2 < cantCol; j2++){
+                        System.out.println(subMatrix(i1, i2, j1, j2));
+                    }
+                }
+            }
+        }
+    }
+    
+    public void mostrarMatrices() {
+        for (Matriz matriz : this.lista) {
+            System.out.println(matriz.toString());
         }
     }
     
@@ -153,32 +182,35 @@ public class Matriz {
         Matriz M1 = new Matriz(4, 4);
         Matriz M2 = new Matriz(2, 2);
         LinkedList<Matriz> L1 = new LinkedList<>();
-        M1.generarElem(-5, 5);
+        M1.generarElem(0, 5);
         M2.generarElem(-10, 10);        
 
         System.out.println("Matriz M1:");
         System.out.println(M1.toString());
-        System.out.println("Matriz M2:");
-        System.out.println(M2);      
+//        System.out.println(M1.subMatrix(0, 0, 0, 0));
+        System.out.println("Submatriz de M1");
+        M1.mostrarSubMat();
+//        System.out.println("Matriz M2:");
+//        System.out.println(M2);      
         
-        LinkedList<Matriz> listaMatrices = new LinkedList<>();
-        listaMatrices.add(M1);
-        listaMatrices.add(M2);
-        
-        System.out.println(listaMatrices);
-        System.out.println("Submatrices de M1:");
-        M1.encontrarSubMatr();
-        System.out.println(M1);
-//        System.out.println(M1.lista);        
-        
-        System.out.println("Submatrices 2x2 de M1:");
-//        M1.mostrarSubMat(2, 2);
-        
-        System.out.println();
-        Matriz matriz = new Matriz(2, 2);
-        matriz.generarElem(1, 9);
-        System.out.println(matriz);
-        System.out.println(matriz.menor(0, 1));
-        System.out.println(matriz.det(matriz));
+//        LinkedList<Matriz> listaMatrices = new LinkedList<>();
+//        listaMatrices.add(M1);
+//        listaMatrices.add(M2);
+//        
+//        System.out.println(listaMatrices);
+//        System.out.println("Submatrices de M1:");
+//        M1.encontrarSubMatr();
+////        System.out.println(M1.lista);    
+//        M1.mostrarMatrices();
+//        
+//        System.out.println("Submatrices 2x2 de M1:");
+////        M1.mostrarSubMat(2, 2);
+//        
+//        System.out.println();
+//        Matriz matriz = new Matriz(2, 2);
+//        matriz.generarElem(1, 9);
+//        System.out.println(matriz);
+//        System.out.println(matriz.menor(0, 1));
+//        System.out.println(matriz.det(matriz));
     }
 }
